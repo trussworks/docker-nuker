@@ -5,7 +5,7 @@ function test_latest() {
   tag=latest
   echo "Testing ${tag} Dockerfile"
 
-  docker run -it "trussworks/nuker:${tag}" aws version
+  docker run -it "trussworks/nuker:${tag}" aws --version
   docker run -it "trussworks/nuker:${tag}" aws-nuke --version
 
   echo "Passed ${tag}"
