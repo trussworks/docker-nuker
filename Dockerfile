@@ -23,8 +23,9 @@ ARG AWS_NUKE_SHA256SUM=2b6cf01c978d1581341e9612107a217826ae9bce0529f41a839fedae4
 RUN set -ex && cd ~ \
     && curl -sSLO https://github.com/rebuy-de/aws-nuke/releases/download/v${AWS_NUKE_VERSION}/aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64.tar.gz \
     && [ $(sha256sum aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64.tar.gz | cut -f1 -d' ') = ${AWS_NUKE_SHA256SUM} ] \
+    && tar xvfa aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64.tar.gz \
     && chmod 755 aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64.tar.gz \
-    && mv aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64.tar.gz /usr/local/bin/aws-nuke
+    && mv aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64 /usr/local/bin/aws-nuke
 
 # apt-get all the things
 # Notes:

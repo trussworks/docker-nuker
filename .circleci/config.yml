@@ -16,9 +16,9 @@ jobs:
           command: make build
 
       - run:
-          name: Release container
-          command: make release
-
-      - run:
           name: Test containers
           command: make test
+
+      - run:
+          name: Release container
+          command: make release
