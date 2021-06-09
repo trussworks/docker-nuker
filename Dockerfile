@@ -18,8 +18,8 @@ RUN set -ex && cd ~ \
     && aws --version \
     && rm -r awscliv2.zip awscliv2.sig aws
 
-ARG AWS_NUKE_VERSION=2.14.0
-ARG AWS_NUKE_SHA256SUM=8e228c00b379055f8fdacf60aee79e0e7863ae27e021170f3b389ec8a40edaba
+ARG AWS_NUKE_VERSION=2.15.0
+ARG AWS_NUKE_SHA256SUM=2b6cf01c978d1581341e9612107a217826ae9bce0529f41a839fedae47f9e8d2
 RUN set -ex && cd ~ \
     && curl -sSLO https://github.com/rebuy-de/aws-nuke/releases/download/v${AWS_NUKE_VERSION}/aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64 \
     && [ $(sha256sum aws-nuke-v${AWS_NUKE_VERSION}-linux-amd64 | cut -f1 -d' ') = ${AWS_NUKE_SHA256SUM} ] \
